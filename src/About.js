@@ -21,8 +21,8 @@ function About() {
             <p>
               with an experince of almost two years , I decide to search for a
               job and join a company that offer me a place to learn and thrive ,
-              so I started to collect data about the companies open positions ,
-              and I collected a big amount of data , so I decided to build this
+              I started to collect data about the companies open positions ,
+              sfter collecting a big amount of data ,I decided to build this
               internet site , so other people can take advantage of it too .
             </p>
             <p>

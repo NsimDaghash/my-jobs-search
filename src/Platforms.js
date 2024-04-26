@@ -114,7 +114,15 @@ function ExcelTable() {
             justifyContent: "space-between",
           }}
         >
-          <button onClick={prevPage} disabled={currentPage === 1}>
+          <button
+            onClick={prevPage}
+            disabled={currentPage === 1}
+            style={{
+              border: "1px solid green",
+              backgroundColor: "lightgreen",
+              borderRadius: "5px",
+            }}
+          >
             Previous Page
           </button>
           {/* Page number display */}
@@ -124,6 +132,11 @@ function ExcelTable() {
           <button
             onClick={nextPage}
             disabled={currentRows.length < rowsPerPage}
+            style={{
+              border: "1px solid green",
+              backgroundColor: "lightgreen",
+              borderRadius: "5px",
+            }}
           >
             Next Page
           </button>
