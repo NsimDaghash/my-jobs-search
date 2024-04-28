@@ -64,7 +64,9 @@ function About() {
           there internet site .
         </p>
         <div style={{ width: "80%", margin: "0 auto", textAlign: "center" }}>
-          <a href="./contact">Contact</a>
+          <Link to="/contact">
+            <b>Contact</b>
+          </Link>
         </div>
       </div>
     </div>
