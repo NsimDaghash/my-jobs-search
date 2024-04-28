@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Navbar";
 import About from "./About";
 import ExcelTable from "./ExcelTable";
@@ -32,12 +32,12 @@ function App() {
           </div>
         </div>
         <Navbar />
-        <Router>
-          <Route path="/#/" element={<About />} />
-          <Route path="/#/jobs" element={<ExcelTable />} />
-          <Route path="/#/Platforms" element={<Platforms />} />
-          <Route path="/#/contact" element={<Contact />} />
-        </Router>
+        <Routes>
+          <Route path="/" element={<About />} />
+          <Route path="/jobs" element={<ExcelTable />} />
+          <Route path="/Platforms" element={<Platforms />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </div>
     </Router>
   );
