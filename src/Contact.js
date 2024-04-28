@@ -11,11 +11,11 @@ function Contact() {
       }}
     >
       <div style={{ width: "80%", margin: "0 auto" }}>
-        <h1 class="section-heading contact-heading">Contact Me</h1>
+        <h1 className="section-heading contact-heading">Contact Me</h1>
         <div style={{ marginLeft: "2vh" }}>
           <h3>You can reach me at the following :</h3>
         </div>
-        <div class="contact-me">
+        <div className="contact-me">
           <div
             style={{
               margin: "3vh",
@@ -24,10 +24,10 @@ function Contact() {
             <div>My LinkedIn profile :</div>
             <a
               href="https://www.linkedin.com/in/nasim-daghash/"
-              class="social-media-link"
+              className="social-media-link"
               target="_blank"
             >
-              <span class="about-me about-me-link">
+              <span className="about-me about-me-link">
                 https://www.linkedin.com/in/nasim-daghash/
               </span>
             </a>
@@ -39,8 +39,8 @@ function Contact() {
             }}
           >
             <div>My eMail :</div>
-            <a href="mailto:nisimdg@walla.com" class="social-media-link">
-              <span class="about-me about-me-link">nisimdg@walla.com</span>
+            <a href="mailto:nisimdg@walla.com" className="social-media-link">
+              <span className="about-me about-me-link">nisimdg@walla.com</span>
             </a>
           </div>
           <div
@@ -49,8 +49,8 @@ function Contact() {
             }}
           >
             <div>My phone :</div>
-            <a class="social-media-link">
-              <span class="about-me about-me-link">+(972)-52-2355515</span>
+            <a className="social-media-link">
+              <span className="about-me about-me-link">+(972)-52-2355515</span>
             </a>
           </div>
         </div>

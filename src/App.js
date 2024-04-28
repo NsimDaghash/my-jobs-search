@@ -13,7 +13,7 @@ function App() {
         style={{
           display: "flex",
           justifyContent: "center",
-          marginBottom: "2vh",
+          marginTop: "2vh",
         }}
       >
         <div
@@ -25,8 +25,10 @@ function App() {
             width: "80%",
           }}
         >
-          <h1 style={{ color: "green", lineHeight: "5vh" }}>
-            Nasim Daghash Hitech Search Jobs
+          <h1
+            style={{ color: "green", lineHeight: "5vh", textAlign: "center" }}
+          >
+            Nasim Dagash Hi-tech jobs search site
           </h1>
         </div>
       </div>
@@ -37,6 +39,26 @@ function App() {
         <Route path="/Platforms" element={<Platforms />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginTop: "2vh",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            border: "2px solid green",
+            borderRadius: "10px",
+            width: "80%",
+            textAlign: "center",
+          }}
+        >
+          All rights reserved - NASIM DAGHASH 2024
+        </div>
+      </div>
     </div>
   );
 }

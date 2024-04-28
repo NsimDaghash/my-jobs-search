@@ -48,11 +48,18 @@ function ExcelTable() {
         flexDirection: "column",
       }}
     >
-      <div style={{ width: "80%", margin: "0 auto" }}>
+      <div
+        style={{
+          width: "98%",
+          margin: "0 auto",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
         <table
           style={{
             border: "3px solid rgb(0, 0, 0)",
-            width: "100%",
+            width: "80%",
             backgroundColor: "white",
           }}
         >
