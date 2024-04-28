@@ -33,10 +33,10 @@ function App() {
         </div>
         <Navbar />
         <Router>
-          <Route exact path="/" element={<About />} />
-          <Route path="/jobs" element={<ExcelTable />} />
-          <Route path="/Platforms" element={<Platforms />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/#/" element={<About />} />
+          <Route path="/#/jobs" element={<ExcelTable />} />
+          <Route path="/#/Platforms" element={<Platforms />} />
+          <Route path="/#/contact" element={<Contact />} />
         </Router>
       </div>
     </Router>
