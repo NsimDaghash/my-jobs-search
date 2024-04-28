@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./Navbar";
 import About from "./About";
 import ExcelTable from "./ExcelTable";
@@ -8,38 +8,36 @@ import Contact from "./Contact";
 
 function App() {
   return (
-    <Router>
-      <div>
+    <div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginBottom: "2vh",
+        }}
+      >
         <div
           style={{
             display: "flex",
             justifyContent: "center",
-            marginBottom: "2vh",
+            border: "2px solid green",
+            borderRadius: "10px",
+            width: "80%",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              border: "2px solid green",
-              borderRadius: "10px",
-              width: "80%",
-            }}
-          >
-            <h1 style={{ color: "green", lineHeight: "5vh" }}>
-              Nasim Daghash Hitech Search Jobs
-            </h1>
-          </div>
+          <h1 style={{ color: "green", lineHeight: "5vh" }}>
+            Nasim Daghash Hitech Search Jobs
+          </h1>
         </div>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<About />} />
-          <Route path="/jobs" element={<ExcelTable />} />
-          <Route path="/Platforms" element={<Platforms />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
       </div>
-    </Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<About />} />
+        <Route path="/jobs" element={<ExcelTable />} />
+        <Route path="/Platforms" element={<Platforms />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </div>
   );
 }
 
