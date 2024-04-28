@@ -152,7 +152,7 @@ function ExcelTable() {
               borderRadius: "5px",
             }}
             onClick={nextPage}
-            disabled={currentRows.length < rowsPerPage}
+            disabled={currentPage == totalPages}
           >
             Next Page
           </button>
