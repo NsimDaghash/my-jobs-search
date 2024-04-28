@@ -41,16 +41,15 @@ function About() {
         <h2>What makes this site special is:</h2>
 
         <p>
-          1. The large amount of company names found in it (over 900 companies),
-          every company that has a career page, or open jobs, or join the team
-          ,or open positions and all kinds of another variations of that - with
-          the details of the open positions, was added to this site .
+          1. The large amount of company names found in it ת1000 companies names
+          - Arranged in ascending alphabetical order - no duplicates .
         </p>
 
         <p>
           2. The companies are presented in a table with pagination, where in
           the column next to the company name there is a direct link to the jobs
-          page of that company.
+          page of that company. Sometimes you have to scroll down to find the
+          jobs, sometimes there is a link to the platform.
         </p>
 
         <p>
