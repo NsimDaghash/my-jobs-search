@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import * as XLSX from "xlsx";
 
 function ExcelTable() {
@@ -143,7 +144,9 @@ function ExcelTable() {
         </div>
       </div>
       <div style={{ width: "80%", margin: "0 auto", textAlign: "center" }}>
-        <a href="./">Home</a>
+        <Link to="/">
+          <b>Home</b>
+        </Link>
       </div>
     </div>
   );

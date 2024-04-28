@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Contact() {
   return (
@@ -55,7 +56,9 @@ function Contact() {
         </div>
       </div>
       <div style={{ width: "80%", margin: "0 auto", textAlign: "center" }}>
-        <a href="./">Home</a>
+        <Link to="/">
+          <b>Home</b>
+        </Link>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import * as XLSX from "xlsx";
+import { Link } from "react-router-dom";
 
 function ExcelTable() {
   const [tableData, setTableData] = useState([]);
@@ -165,7 +166,9 @@ function ExcelTable() {
           marginTop: "2vh",
         }}
       >
-        <a href="./">Home</a>
+        <Link to="/">
+          <b>Home</b>
+        </Link>
       </div>
     </div>
   );
