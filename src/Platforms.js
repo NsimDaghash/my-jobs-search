@@ -144,7 +144,7 @@ function ExcelTable() {
         </div>
       </div>
       <div style={{ width: "80%", margin: "0 auto", textAlign: "center" }}>
-        <Link to="/">
+        <Link to="/about">
           <b>Home</b>
         </Link>
       </div>

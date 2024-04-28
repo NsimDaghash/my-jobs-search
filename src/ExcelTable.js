@@ -166,7 +166,7 @@ function ExcelTable() {
           marginTop: "2vh",
         }}
       >
-        <Link to="/">
+        <Link to="/about">
           <b>Home</b>
         </Link>
       </div>

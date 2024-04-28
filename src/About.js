@@ -41,8 +41,8 @@ function About() {
         <h2>What makes this site special is:</h2>
 
         <p>
-          1. The large amount of company names found in it ת1000 companies names
-          - Arranged in ascending alphabetical order - no duplicates .
+          1. The large amount of company names found in it (1000 companies names
+          ) Arranged in ascending alphabetical order - no duplicates .
         </p>
 
         <p>

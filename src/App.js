@@ -33,7 +33,7 @@ function App() {
         </div>
         <Navbar />
         <Routes>
-          <Route path="/" element={<About />} />
+          <Route path="/about" element={<About />} />
           <Route path="/jobs" element={<ExcelTable />} />
           <Route path="/Platforms" element={<Platforms />} />
           <Route path="/contact" element={<Contact />} />
