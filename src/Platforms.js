@@ -23,15 +23,12 @@ function ExcelTable() {
     fetchData();
   }, []);
 
-  // Logic to calculate index of the first and last row of the current page
   const indexOfLastRow = currentPage * rowsPerPage;
   const indexOfFirstRow = indexOfLastRow - rowsPerPage;
   const currentRows = tableData.slice(indexOfFirstRow, indexOfLastRow);
 
-  // Total number of pages
   const totalPages = Math.ceil(tableData.length / rowsPerPage);
 
-  // Function to handle pagination
   const nextPage = () => {
     setCurrentPage((prevPage) => prevPage + 1);
   };
@@ -103,7 +100,6 @@ function ExcelTable() {
           </tbody>
         </table>
       </div>
-      {/* Pagination buttons */}
       <div style={{ display: "flex", justifyContent: "center" }}>
         <div
           style={{
@@ -126,7 +122,6 @@ function ExcelTable() {
           >
             Previous Page
           </button>
-          {/* Page number display */}
           <div style={{ textAlign: "center", marginTop: "10px" }}>
             Page {currentPage} of {totalPages}
           </div>

@@ -12,6 +12,12 @@ function Contact() {
     >
       <div style={{ width: "80%", margin: "0 auto" }}>
         <h1 className="section-heading contact-heading">Contact Me</h1>
+        <div>
+          If your company does not exist on this platform, and you want to add
+          it, or if you exist on this platform and you do not want to remain on
+          it for any reason, or if you are interested in offering me a position,
+          please contact me.
+        </div>
         <div style={{ marginLeft: "2vh" }}>
           <h3>You can reach me at the following :</h3>
         </div>
@@ -48,7 +54,7 @@ function Contact() {
               margin: "3vh",
             }}
           >
-            <div>My phone :</div>
+            <div>Phone/WhatsApp :</div>
             <a className="social-media-link">
               <span className="about-me about-me-link">+(972)-52-2355515</span>
             </a>

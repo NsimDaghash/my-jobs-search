@@ -72,7 +72,16 @@ function About() {
             there internet site .
           </p>
           <div style={{ width: "80%", margin: "0 auto", textAlign: "center" }}>
-            <Link to="/contact">
+            <Link
+              to="/contact"
+              style={{
+                border: "2px solid blue",
+                padding: "5px",
+                borderRadius: "5px",
+                backgroundColor: "lightblue",
+                textDecoration: "none",
+              }}
+            >
               <b>Contact</b>
             </Link>
           </div>
