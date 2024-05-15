@@ -13,7 +13,6 @@ function Navbar() {
       style={{
         display: "flex",
         justifyContent: "center",
-        marginTop: "1vh",
       }}
     >
       <div

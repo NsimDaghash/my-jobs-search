@@ -49,8 +49,9 @@ function About() {
           </h2>
 
           <p>
-            1. The large amount of company names found in it (1000 companies
-            names ) Arranged in ascending alphabetical order - no duplicates .
+            1. The large amount of company names found in it (more than 900
+            companies names ) Arranged in ascending alphabetical order - no
+            duplicates .
           </p>
 
           <p>

@@ -7,11 +7,11 @@ function FilterInputs({ applyFilters, resetTableData }) {
 
   const locations = [
     "Jerusalem District",
-    "Northern District",
+    "North District",
     "Haifa District",
-    "Central District",
+    "Center District",
     "Tel Aviv District",
-    "Southern District",
+    "South District",
   ];
 
   const handleApplyFilters = () => {
@@ -31,7 +31,7 @@ function FilterInputs({ applyFilters, resetTableData }) {
         display: "flex",
         justifyContent: "center",
         flexDirection: "column",
-        backgroundColor: "lightblue",
+        backgroundColor: "lightskyblue",
         padding: "10px",
         borderTopLeftRadius: "10px",
         borderTopRightRadius: "10px",
