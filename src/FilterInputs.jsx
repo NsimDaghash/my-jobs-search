@@ -1,18 +1,15 @@
 import React, { useState } from "react";
 
-function FilterInputs({ applyFilters, resetTableData }) {
+function FilterInputs({
+  applyFilters,
+  resetTableData,
+  uniqueCompanyLocations,
+  uniqueCompanyOccupations,
+  uniqueCities,
+}) {
   const [companyLocation, setCompanyLocation] = useState("");
   const [companyOccupation, setCompanyOccupation] = useState("");
   const [city, setCity] = useState("");
-
-  const locations = [
-    "Jerusalem District",
-    "North District",
-    "Haifa District",
-    "Center District",
-    "Tel Aviv District",
-    "South District",
-  ];
 
   const handleApplyFilters = () => {
     applyFilters({ companyLocation, companyOccupation, city });
@@ -52,7 +49,7 @@ function FilterInputs({ applyFilters, resetTableData }) {
             onChange={(e) => setCompanyLocation(e.target.value)}
           >
             <option value="">Select location</option>
-            {locations.map((location, index) => (
+            {uniqueCompanyLocations.map((location, index) => (
               <option key={index} value={location}>
                 {location}
               </option>
@@ -61,27 +58,34 @@ function FilterInputs({ applyFilters, resetTableData }) {
         </div>
         <div style={{ marginBottom: "10px" }}>
           <label style={{ marginRight: "10px" }}>City :</label>
-          <input
-            type="text"
-            placeholder="City"
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-          />
+          <select value={city} onChange={(e) => setCity(e.target.value)}>
+            <option value="">Select city</option>
+            {uniqueCities.map((city, index) => (
+              <option key={index} value={city}>
+                {city}
+              </option>
+            ))}
+          </select>
         </div>
         <div style={{ marginBottom: "10px" }}>
           <label style={{ marginRight: "10px" }}>Occupation :</label>
-          <input
-            type="text"
-            placeholder="Company Occupation"
+          <select
             value={companyOccupation}
             onChange={(e) => setCompanyOccupation(e.target.value)}
-          />
+          >
+            <option value="">Select occupation</option>
+            {uniqueCompanyOccupations.map((occupation, index) => (
+              <option key={index} value={occupation}>
+                {occupation}
+              </option>
+            ))}
+          </select>
         </div>
         <div
           style={{
             width: "150px",
             textAlign: "center",
-            marginleft: "1vh",
+            marginLeft: "1vh",
             display: "flex",
             justifyContent: "space-between",
           }}

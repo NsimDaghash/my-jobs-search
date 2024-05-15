@@ -10,6 +10,9 @@ function ExcelTable() {
   const [filteredData, setFilteredData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [rowsPerPage] = useState(20); // Number of rows per page
+  const [uniqueCompanyLocations, setUniqueCompanyLocations] = useState([]);
+  const [uniqueCompanyOccupations, setUniqueCompanyOccupations] = useState([]);
+  const [uniqueCities, setUniqueCities] = useState([]);
 
   const fetchData = async () => {
     const response = await fetch(process.env.PUBLIC_URL + "/data.xlsx");
@@ -19,6 +22,17 @@ function ExcelTable() {
     const sheetName = workbook.SheetNames[0];
     const worksheet = workbook.Sheets[sheetName];
     const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+
+    // Extract unique values
+    const companyLocations = Array.from(new Set(jsonData.map((row) => row[5])));
+    const companyOccupations = Array.from(
+      new Set(jsonData.map((row) => row[4]))
+    );
+    const cities = Array.from(new Set(jsonData.map((row) => row[6])));
+
+    setUniqueCompanyLocations(companyLocations.filter(Boolean));
+    setUniqueCompanyOccupations(companyOccupations.filter(Boolean));
+    setUniqueCities(cities.filter(Boolean));
 
     setTableData(jsonData);
     setFilteredData(jsonData); // Initially set filtered data to all data
@@ -70,8 +84,8 @@ function ExcelTable() {
     if (city) {
       filtered = filtered.filter(
         (row) =>
-          row[5] && // Assuming city is at index 6 in the row
-          row[5].toLowerCase().includes(city.toLowerCase())
+          row[6] && // Assuming city is at index 6 in the row
+          row[6].toLowerCase().includes(city.toLowerCase())
       );
     }
 
@@ -100,6 +114,9 @@ function ExcelTable() {
           <FilterInputs
             applyFilters={applyFilters}
             resetTableData={fetchData}
+            uniqueCompanyLocations={uniqueCompanyLocations}
+            uniqueCompanyOccupations={uniqueCompanyOccupations}
+            uniqueCities={uniqueCities}
           />
 
           <DataTable currentRows={currentRows} />
