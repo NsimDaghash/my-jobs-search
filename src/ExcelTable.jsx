@@ -4,6 +4,7 @@ import DataTable from "./DataTable";
 import Pagination from "./Pagination";
 
 import FilterInputs from "./FilterInputs";
+import "./styles.css";
 
 function ExcelTable() {
   const [tableData, setTableData] = useState([]);
@@ -102,15 +103,16 @@ function ExcelTable() {
       }}
     >
       <div
+        className="jobs-table"
         style={{
-          width: "100%",
+          //width: "80vw",
           margin: "0 auto",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
         }}
       >
-        <div style={{ margin: "0 10%" }}>
+        <div>
           <FilterInputs
             applyFilters={applyFilters}
             resetTableData={fetchData}

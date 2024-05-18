@@ -1,0 +1,22 @@
+@media only screen and (max-width: 500px) {
+    .full-width {
+      width: 100vw;
+    }
+    .navbar {
+        width: 100vw;
+        margin-left: 0;
+    }
+    .occupation-bar{
+        width: 60vw;
+    }
+  }
+
+  @media only screen and (min-width: 501px) {
+    .jobs-table {
+      width: 80vw;
+    }
+
+  }
+
+  
+  

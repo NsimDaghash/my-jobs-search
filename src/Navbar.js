@@ -15,11 +15,7 @@ function Navbar() {
         justifyContent: "center",
       }}
     >
-      <div
-        style={{
-          width: "80%",
-        }}
-      >
+      <div>
         <nav
           style={{
             display: "flex",
