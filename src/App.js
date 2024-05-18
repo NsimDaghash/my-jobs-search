@@ -56,7 +56,7 @@ function App() {
             textAlign: "center",
           }}
         >
-          All rights reserved - NASIM DAGHASH 2024
+          Creted by : NASIM DAGHASH - 2024
         </div>
       </div>
     </div>
