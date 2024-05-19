@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles.css";
 
 function Pagination({
   currentPage,
@@ -35,7 +36,7 @@ function Pagination({
             textAlign: "center",
             marginTop: "10px",
             display: "flex",
-            flexDirection: "row",
+            flexDirection: "column",
           }}
         >
           <div style={{ marginRight: "1vh" }}>
@@ -56,7 +57,7 @@ function Pagination({
             borderRadius: "5px",
           }}
           onClick={nextPage}
-          disabled={currentPage === totalPages || filteredData.length == 0}
+          disabled={currentPage === totalPages || filteredData.length === 0}
         >
           Next Page
         </button>
