@@ -33,7 +33,7 @@ function About() {
               internet site , so other people can take advantage of it too .
             </p>
             <p>
-              For more informatiom please visit my{" "}
+              For more informatiom about me - please visit my{" "}
               <a
                 href="https://www.linkedin.com/in/nasim-daghash/"
                 target="_blank"
@@ -57,8 +57,8 @@ function About() {
           <p>
             2. The companies are presented in a table with pagination, where in
             the column next to the company name there is a direct link to the
-            jobs page of that company. Sometimes you have to scroll down to find
-            the jobs, sometimes there is a link to the platform.
+            jobs page of that company (Sometimes you have to scroll down at the
+            company site to find the jobs).
           </p>
 
           <p>
