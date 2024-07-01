@@ -84,9 +84,7 @@ function ExcelTable() {
     // Apply filters based on city
     if (city) {
       filtered = filtered.filter(
-        (row) =>
-          row[6] && // Assuming city is at index 6 in the row
-          row[6].toLowerCase().includes(city.toLowerCase())
+        (row) => row[6] && row[6].toLowerCase().includes(city.toLowerCase())
       );
     }
 
@@ -105,7 +103,6 @@ function ExcelTable() {
       <div
         className="jobs-table"
         style={{
-          //width: "80vw",
           margin: "0 auto",
           display: "flex",
           flexDirection: "column",

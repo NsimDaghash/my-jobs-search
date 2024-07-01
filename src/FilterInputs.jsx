@@ -36,7 +36,6 @@ function FilterInputs({
     >
       <div>You can filter by:</div>
       <div
-        // className="full-width"
         style={{
           display: "flex",
           flexWrap: "wrap",
@@ -68,22 +67,6 @@ function FilterInputs({
             ))}
           </select>
         </div>
-        {
-          // <div style={{ marginBottom: "10px" }}>
-          //   <label style={{ marginRight: "10px" }}>Occupation :</label>
-          //   <select
-          //     value={companyOccupation}
-          //     onChange={(e) => setCompanyOccupation(e.target.value)}
-          //   >
-          //     <option value="">Select occupation</option>
-          //     {uniqueCompanyOccupations.map((occupation, index) => (
-          //       <option key={index} value={occupation}>
-          //         {occupation}
-          //       </option>
-          //     ))}
-          //   </select>
-          // </div>
-        }
         <div
           style={{
             marginBottom: "10px",
@@ -96,7 +79,6 @@ function FilterInputs({
             value={companyOccupation}
             onChange={(e) => setCompanyOccupation(e.target.value)}
             className="occupation-bar"
-            // style={{ width: "60vw" }}
           >
             <option value="">Select occupation</option>
             {uniqueCompanyOccupations.map((occupation, index) => (
