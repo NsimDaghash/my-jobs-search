@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function About() {
+function About({ darkMode }) {
   return (
     <div style={{ display: "flex", justifyContent: "center", margin: "2vh" }}>
       <div style={{ width: "80%", marginBottom: "2vh" }}>
@@ -37,6 +37,7 @@ function About() {
               <a
                 href="https://www.linkedin.com/in/nasim-daghash/"
                 target="_blank"
+                style={{ color: darkMode ? "yellow" : "inherit" }}
               >
                 LinkedIn
               </a>

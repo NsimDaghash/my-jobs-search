@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Contact() {
+const Contact = ({ darkMode }) => {
   return (
     <div
       style={{
@@ -32,6 +32,7 @@ function Contact() {
               href="https://www.linkedin.com/in/nasim-daghash/"
               className="social-media-link"
               target="_blank"
+              style={{ color: darkMode ? "yellow" : "blue" }}
             >
               <span className="about-me about-me-link">
                 https://www.linkedin.com/in/nasim-daghash/
@@ -45,7 +46,11 @@ function Contact() {
             }}
           >
             <div>My eMail :</div>
-            <a href="mailto:nisimdg@walla.com" className="social-media-link">
+            <a
+              href="mailto:nisimdg@walla.com"
+              className="social-media-link"
+              style={{ color: darkMode ? "yellow" : "blue" }}
+            >
               <span className="about-me about-me-link">nisimdg@walla.com</span>
             </a>
           </div>
@@ -62,11 +67,11 @@ function Contact() {
         </div>
       </div>
       <div style={{ width: "80%", margin: "0 auto", textAlign: "center" }}>
-        <Link to="/">
+        <Link to="/" style={{ color: darkMode ? "yellow" : "blue" }}>
           <b>Home</b>
         </Link>
       </div>
     </div>
   );
-}
+};
 export default Contact;

@@ -1,0 +1,50 @@
+.platforms-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .jobs-table {
+    margin: 0 auto;
+    width: 80%;
+  }
+  
+  .table-container {
+    border: 2px solid black;
+    width: 100%;
+  }
+  
+  .table-container-dark {
+    border: 2px solid white;
+    width: 100%;
+  }
+  
+  .table-header {
+    border: 3px solid black;
+  }
+  
+  .table-header-dark {
+    border: 3px solid white;
+  }
+  
+  .table-cell {
+    border: 2px solid black;
+  }
+  
+  .table-cell-dark {
+    border: 2px solid white;
+  }
+  
+  .job-site-link {
+    width: 25%;
+  }
+  
+  .job-site-link a {
+    color: blue;
+  }
+  
+  .job-site-link a:hover {
+    color: yellow;
+  }
+  
+  

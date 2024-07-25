@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles.css";
+import "./Pagination.css";
 
 function Pagination({
   currentPage,
@@ -9,39 +9,17 @@ function Pagination({
   filteredData,
 }) {
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
-      <div
-        style={{
-          marginTop: "20px",
-          textAlign: "center",
-          display: "flex",
-          flexDirection: "row",
-          width: "80%",
-          justifyContent: "space-between",
-        }}
-      >
+    <div className="pagination-container">
+      <div className="pagination-buttons">
         <button
           onClick={prevPage}
           disabled={currentPage === 1}
-          style={{
-            border: "1px solid green",
-            backgroundColor: "lightgreen",
-            borderRadius: "5px",
-          }}
+          className="pagination-button"
         >
           Previous Page
         </button>
-        <div
-          style={{
-            textAlign: "center",
-            marginTop: "10px",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <div style={{ marginRight: "1vh" }}>
-            {filteredData.length} companies
-          </div>
+        <div className="pagination-info">
+          <div>{filteredData.length} companies</div>
           {filteredData.length ? (
             <div>
               Page {currentPage} of {totalPages}
@@ -51,13 +29,9 @@ function Pagination({
           )}
         </div>
         <button
-          style={{
-            border: "1px solid green",
-            backgroundColor: "lightgreen",
-            borderRadius: "5px",
-          }}
           onClick={nextPage}
           disabled={currentPage === totalPages || filteredData.length === 0}
+          className="pagination-button"
         >
           Next Page
         </button>

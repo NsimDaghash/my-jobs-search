@@ -1,0 +1,27 @@
+.navbar-link {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: inherit;
+  }
+  
+  .navbar-link-dark {
+    color: yellow;
+  }
+  
+  .navbar-link-light {
+    color: inherit;
+  }
+  
+  .navbar-link-background {
+    background-color: transparent;
+  }
+  
+  .navbar-link-active-dark {
+    background-color: #F1B140;
+  }
+  
+  .navbar-link-active-light {
+    background-color: lightskyblue;
+  }
+  

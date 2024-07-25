@@ -1,0 +1,33 @@
+.pagination-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .pagination-buttons {
+    margin-top: 1vh;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-between;
+  }
+  
+  .pagination-button {
+    border: 1px solid blue;
+    background-color: lightskyblue;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .pagination-button:disabled {
+    background-color: lightgray;
+    cursor: not-allowed;
+  }
+  
+  .pagination-info {
+    text-align: center;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  

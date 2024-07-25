@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import * as XLSX from "xlsx";
+import Pagination from "./Pagination";
+import "./Platforms.css";
+// import "./DataTable.css";
 
-function ExcelTable() {
+const Platforms = ({ darkMode }) => {
   const [tableData, setTableData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [rowsPerPage] = useState(20); // Number of rows per page
+  const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,10 +22,17 @@ function ExcelTable() {
       const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
 
       setTableData(jsonData);
+      setFilteredData(jsonData);
     };
 
     fetchData();
   }, []);
+
+  const tableContainerClass = darkMode
+    ? "table-container-dark"
+    : "table-container";
+  const tableHeaderClass = darkMode ? "table-header-dark" : "table-header";
+  const tableCellClass = darkMode ? "table-cell-dark" : "table-cell";
 
   const indexOfLastRow = currentPage * rowsPerPage;
   const indexOfFirstRow = indexOfLastRow - rowsPerPage;
@@ -38,40 +49,43 @@ function ExcelTable() {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        flexDirection: "column",
-      }}
-    >
-      <div style={{ width: "80%", margin: "0 auto" }}>
-        <div style={{ margin: "1vh" }}>
-          Here you can find jobs platforms , HR companies , Hitech industrial
+    <div className="platforms-container">
+      <div className="jobs-table">
+        <div className="jobs-description">
+          Here you can find jobs platforms, HR companies, Hitech industrial
           parks sites, . . .
         </div>
-        <table style={{ border: "3px solid rgb(0, 0, 0)", width: "100%" }}>
+        <table className={tableContainerClass}>
           <thead>
-            <tr>
-              <th style={{ border: "2px solid black" }}></th>
-              <th style={{ border: "2px solid black" }}>Name</th>
-              <th style={{ border: "2px solid black" }}>Site</th>
+            <tr className={tableHeaderClass}>
+              <th className={tableCellClass}>S.N</th>
+              <th className={tableCellClass}>Name</th>
+              <th className={tableCellClass}>Site</th>
             </tr>
           </thead>
           <tbody>
             {currentRows.map((row, rowIndex) => (
-              <tr key={rowIndex} style={{ border: "1px solid black" }}>
+              <tr key={rowIndex} className={tableCellClass}>
                 {row.map((cell, cellIndex) => {
                   if (cellIndex === 2) {
                     return (
                       <td
                         key={cellIndex}
-                        style={{ width: "25%", border: "1px solid black" }}
+                        className={`${tableCellClass} job-site-link`}
                       >
                         {row[2] === "No jobs Founded" ? (
                           <> No jobs at company site !</>
                         ) : (
-                          <a href={cell} target="_blank">
+                          // <a href={cell} target="_blank">
+                          //   Site
+                          // </a>
+                          <a
+                            href={cell}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ color: darkMode ? "yellow" : "inherit" }}
+                            decoration="none"
+                          >
                             Site
                           </a>
                         )}
@@ -79,18 +93,8 @@ function ExcelTable() {
                     );
                   }
 
-                  return cellIndex === 1 ? (
-                    <td
-                      key={cellIndex}
-                      style={{ width: "25%", border: "1px solid black" }}
-                    >
-                      {cell}
-                    </td>
-                  ) : (
-                    <td
-                      key={cellIndex}
-                      style={{ width: "5%", border: "1px solid black" }}
-                    >
+                  return (
+                    <td key={cellIndex} className={tableCellClass}>
                       {cell}
                     </td>
                   );
@@ -99,52 +103,17 @@ function ExcelTable() {
             ))}
           </tbody>
         </table>
-      </div>
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <div
-          style={{
-            marginTop: "20px",
-            textAlign: "center",
-            display: "flex",
-            flexDirection: "row",
-            width: "80%",
-            justifyContent: "space-between",
-          }}
-        >
-          <button
-            onClick={prevPage}
-            disabled={currentPage === 1}
-            style={{
-              border: "1px solid green",
-              backgroundColor: "lightgreen",
-              borderRadius: "5px",
-            }}
-          >
-            Previous Page
-          </button>
-          <div style={{ textAlign: "center", marginTop: "10px" }}>
-            Page {currentPage} of {totalPages}
-          </div>
-          <button
-            onClick={nextPage}
-            disabled={currentRows.length < rowsPerPage}
-            style={{
-              border: "1px solid green",
-              backgroundColor: "lightgreen",
-              borderRadius: "5px",
-            }}
-          >
-            Next Page
-          </button>
-        </div>
-      </div>
-      <div style={{ width: "80%", margin: "0 auto", textAlign: "center" }}>
-        <Link to="/">
-          <b>Home</b>
-        </Link>
+
+        <Pagination
+          filteredData={filteredData}
+          currentPage={currentPage}
+          totalPages={totalPages}
+          prevPage={prevPage}
+          nextPage={nextPage}
+        />
       </div>
     </div>
   );
-}
+};
 
-export default ExcelTable;
+export default Platforms;

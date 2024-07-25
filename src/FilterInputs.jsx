@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./FilterInputs.css";
 
 function FilterInputs({
   applyFilters,
@@ -10,114 +11,93 @@ function FilterInputs({
   const [companyLocation, setCompanyLocation] = useState("");
   const [companyOccupation, setCompanyOccupation] = useState("");
   const [city, setCity] = useState("");
+  const [companyName, setCompanyName] = useState("");
 
   const handleApplyFilters = () => {
-    applyFilters({ companyLocation, companyOccupation, city });
+    applyFilters({ companyLocation, companyOccupation, city, companyName });
   };
 
   const resetFilters = () => {
     setCompanyLocation("");
     setCompanyOccupation("");
     setCity("");
+    setCompanyName("");
     resetTableData();
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        flexDirection: "column",
-        backgroundColor: "lightskyblue",
-        padding: "10px",
-        borderTopLeftRadius: "10px",
-        borderTopRightRadius: "10px",
-      }}
-    >
-      <div>You can filter by:</div>
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "space-around",
-        }}
-      >
-        <div style={{ marginBottom: "10px" }}>
-          <label style={{ marginRight: "10px" }}>Location :</label>
+    <div className="filter-inputs-container">
+      <div className="filter-header">You can filter by:</div>
+      <div className="filter-options">
+        <div className="filter-option">
+          <label className="filter-label">Location :</label>
           <select
             value={companyLocation}
             onChange={(e) => setCompanyLocation(e.target.value)}
+            className="filter-select"
           >
             <option value="">Select location</option>
-            {uniqueCompanyLocations.map((location, index) => (
-              <option key={index} value={location}>
-                {location}
-              </option>
-            ))}
+            {uniqueCompanyLocations
+              .sort((a, b) => a.localeCompare(b))
+              .map((location, index) => (
+                <option key={index} value={location}>
+                  {location}
+                </option>
+              ))}
           </select>
         </div>
-        <div style={{ marginBottom: "10px" }}>
-          <label style={{ marginRight: "10px" }}>City :</label>
-          <select value={city} onChange={(e) => setCity(e.target.value)}>
+        <div className="filter-option">
+          <label className="filter-label">City :</label>
+          <select
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+            className="filter-select"
+          >
             <option value="">Select city</option>
-            {uniqueCities.map((city, index) => (
-              <option key={index} value={city}>
-                {city}
-              </option>
-            ))}
+            {uniqueCities
+              .sort((a, b) => a.localeCompare(b))
+              .map((city, index) => (
+                <option key={index} value={city}>
+                  {city}
+                </option>
+              ))}
           </select>
         </div>
-        <div
-          style={{
-            marginBottom: "10px",
-            width: "auto",
-            display: "inline-block",
-          }}
-        >
-          <label style={{ marginRight: "10px" }}>Occupation :</label>
+        <div className="filter-option">
+          <label className="filter-label">Occupation :</label>
           <select
             value={companyOccupation}
             onChange={(e) => setCompanyOccupation(e.target.value)}
-            className="occupation-bar"
+            className="filter-select occupation-bar"
           >
             <option value="">Select occupation</option>
-            {uniqueCompanyOccupations.map((occupation, index) => (
-              <option key={index} value={occupation}>
-                {occupation}
-              </option>
-            ))}
+            {uniqueCompanyOccupations
+              .sort((a, b) => a.localeCompare(b))
+              .map((occupation, index) => (
+                <option key={index} value={occupation}>
+                  {occupation}
+                </option>
+              ))}
           </select>
         </div>
-        <div
-          style={{
-            width: "150px",
-            textAlign: "center",
-            marginLeft: "1vh",
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
+        <div className="filter-option">
+          <label className="filter-label">Company Name :</label>
+          <input
+            type="text"
+            value={companyName}
+            onChange={(e) => setCompanyName(e.target.value)}
+            placeholder="Search by company name"
+            className="filter-input"
+          />
+        </div>
+        <div className="filter-buttons">
           <button
-            style={{
-              border: "1px solid green",
-              backgroundColor: "lightgreen",
-              borderRadius: "5px",
-              padding: "0 20px",
-            }}
             onClick={handleApplyFilters}
+            className="filter-button apply-button"
           >
             Filter
           </button>
-          <button
-            style={{
-              border: "1px solid #E32636",
-              backgroundColor: "lightred",
-              borderRadius: "5px",
-              padding: "0 20px",
-              marginLeft: "5px",
-            }}
-            onClick={resetFilters}
-          >
+          <button onClick={resetFilters} className="filter-button reset-button">
             Reset
           </button>
         </div>

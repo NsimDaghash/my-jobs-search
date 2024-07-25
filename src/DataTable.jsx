@@ -1,38 +1,42 @@
 import React from "react";
+import "./DataTable.css";
 
-function DataTable({ currentRows }) {
+function DataTable({ currentRows, darkMode }) {
+  const tableCellClass = darkMode ? "table-cell-dark" : "table-cell";
+  const tableHeaderClass = darkMode ? "table-header-dark" : "table-header";
+  const dataTable = darkMode ? "table-dark" : "table-light";
   return (
-    <table
-      style={{
-        border: "3px solid lightblue",
-        borderBottomLeftRadius: "10px",
-        borderBottomRightRadius: "10px",
-        padding: "5px",
-        width: "100%",
-      }}
-    >
+    <table className={dataTable}>
       <thead>
         <tr>
-          <th style={{ border: "2px solid black" }}>S.N</th>
-          <th style={{ border: "2px solid black" }}>Company Name</th>
-          <th style={{ border: "2px solid black" }}>Site</th>
-          <th style={{ border: "2px solid black" }}>LinkedIn</th>
+          <th className={tableHeaderClass}>S.N</th>
+          <th className={tableHeaderClass}>Company Name</th>
+          <th className={tableHeaderClass}>Site</th>
+          <th className={tableHeaderClass}>LinkedIn</th>
         </tr>
       </thead>
       <tbody>
         {currentRows.map((row, rowIndex) => (
-          <tr key={rowIndex} style={{ border: "1px solid black" }}>
+          <tr
+            key={rowIndex}
+            className={`table-row ${darkMode ? "dark-mode" : "light-mode"}`}
+          >
             {row.map((cell, cellIndex) => {
               if (cellIndex === 2) {
                 return (
-                  <td
-                    key={cellIndex}
-                    style={{ width: "25%", border: "1px solid black" }}
-                  >
+                  <td key={cellIndex} className={tableCellClass}>
                     {row[2] === "No jobs Founded" ? (
                       <> No jobs at company site !</>
                     ) : (
-                      <a href={cell} target="_blank">
+                      <a
+                        href={cell}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        decoration="none"
+                        style={{
+                          color: darkMode ? "yellow" : "inherit",
+                        }}
+                      >
                         Company Site Careers
                       </a>
                     )}
@@ -41,28 +45,25 @@ function DataTable({ currentRows }) {
               }
               if (cellIndex === 3) {
                 return (
-                  <td
-                    key={cellIndex}
-                    style={{ width: "25%", border: "1px solid black" }}
-                  >
-                    <a href={cell} target="_blank">
+                  <td key={cellIndex} className={tableCellClass}>
+                    <a
+                      href={cell}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: darkMode ? "yellow" : "inherit" }}
+                      decoration="none"
+                    >
                       Company LinkedIn Careers
                     </a>
                   </td>
                 );
               } else {
                 return cellIndex === 1 ? (
-                  <td
-                    key={cellIndex}
-                    style={{ width: "25%", border: "1px solid black" }}
-                  >
+                  <td key={cellIndex} className={tableCellClass}>
                     {cell}
                   </td>
                 ) : (
-                  <td
-                    key={cellIndex}
-                    style={{ width: "5%", border: "1px solid black" }}
-                  >
+                  <td key={cellIndex} className={tableCellClass}>
                     {cell}
                   </td>
                 );

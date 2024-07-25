@@ -1,62 +1,68 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./Navbar";
 import About from "./About";
 import ExcelTable from "./ExcelTable";
 import Platforms from "./Platforms";
 import Contact from "./Contact";
+import "./App.css";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
-    <div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          marginTop: "2vh",
-        }}
-      >
+    <div className={`app-container ${darkMode ? "dark-mode" : ""}`}>
+      <div className="header-container">
         <div
+          className="title-container"
           style={{
-            display: "flex",
-            justifyContent: "center",
-            border: "2px solid green",
-            borderRadius: "10px",
-            width: "80%",
+            border: darkMode ? "2px solid cyan" : "2px solid green",
+            width: "80vw",
           }}
         >
-          <h1
-            style={{ color: "green", lineHeight: "5vh", textAlign: "center" }}
-          >
+          <h1 className="title" style={{ color: darkMode ? "cyan" : "green" }}>
             Nasim Dagash Hi-tech jobs search site
           </h1>
         </div>
       </div>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<About />} />
-        <Route path="/jobs" element={<ExcelTable />} />
-        <Route path="/Platforms" element={<Platforms />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          marginTop: "2vh",
-        }}
-      >
+      <div className="content-container">
+        <Navbar darkMode={darkMode} />
+        <div className="switch-mode">
+          <button
+            onClick={toggleDarkMode}
+            style={{
+              backgroundColor: darkMode ? "cyan" : "lightgray",
+              color: darkMode ? "#fff" : "#222",
+            }}
+          >
+            <b>{darkMode ? "Light Mode" : "Dark Mode"}</b>
+          </button>
+        </div>
+      </div>
+      <div className="content">
+        <Routes>
+          <Route path="/" element={<About darkMode={darkMode} />} />
+          <Route path="/jobs" element={<ExcelTable darkMode={darkMode} />} />
+          <Route
+            path="/platforms"
+            element={<Platforms darkMode={darkMode} />}
+          />
+          <Route path="/contact" element={<Contact darkMode={darkMode} />} />
+        </Routes>
+      </div>
+      <div className="footer-container">
         <div
+          className="footer"
           style={{
-            display: "flex",
-            justifyContent: "center",
-            border: "2px solid green",
-            borderRadius: "10px",
-            width: "80%",
-            textAlign: "center",
+            border: darkMode ? "2px solid cyan" : "2px solid green",
+            color: darkMode ? "cyan" : "green",
           }}
         >
-          Creted by : NASIM DAGHASH - 2024
+          Created by : NASIM DAGHASH - 2024
         </div>
       </div>
     </div>
