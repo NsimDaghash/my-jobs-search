@@ -34,7 +34,7 @@ function DataTable({ currentRows, darkMode }) {
                         rel="noopener noreferrer"
                         decoration="none"
                         style={{
-                          color: darkMode ? "yellow" : "inherit",
+                          color: darkMode ? "yellow" : "blue",
                         }}
                       >
                         Company Site Careers
@@ -50,7 +50,7 @@ function DataTable({ currentRows, darkMode }) {
                       href={cell}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ color: darkMode ? "yellow" : "inherit" }}
+                      style={{ color: darkMode ? "yellow" : "blue" }}
                       decoration="none"
                     >
                       Company LinkedIn Careers

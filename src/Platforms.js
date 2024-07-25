@@ -83,7 +83,7 @@ const Platforms = ({ darkMode }) => {
                             href={cell}
                             target="_blank"
                             rel="noopener noreferrer"
-                            style={{ color: darkMode ? "yellow" : "inherit" }}
+                            style={{ color: darkMode ? "yellow" : "blue" }}
                             decoration="none"
                           >
                             Site
