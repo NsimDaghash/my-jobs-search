@@ -44,14 +44,14 @@ const Navbar = ({ darkMode }) => {
             className={getLinkClass("jobs")}
             onClick={() => handleItemClick("jobs")}
           >
-            <b>Jobs</b>
+            <b>Companies</b>
           </Link>
           <Link
             to="/platforms"
             className={getLinkClass("platforms")}
             onClick={() => handleItemClick("platforms")}
           >
-            <b>Bonus</b>
+            <b>Platforms</b>
           </Link>
           <Link
             to="/contact"

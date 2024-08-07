@@ -24,7 +24,11 @@ function DataTable({ currentRows, darkMode }) {
             {row.map((cell, cellIndex) => {
               if (cellIndex === 2) {
                 return (
-                  <td key={cellIndex} className={tableCellClass}>
+                  <td
+                    key={cellIndex}
+                    className={tableCellClass}
+                    style={{ width: "25%" }}
+                  >
                     {row[2] === "No jobs Founded" ? (
                       <> No jobs at company site !</>
                     ) : (
@@ -45,7 +49,11 @@ function DataTable({ currentRows, darkMode }) {
               }
               if (cellIndex === 3) {
                 return (
-                  <td key={cellIndex} className={tableCellClass}>
+                  <td
+                    key={cellIndex}
+                    className={tableCellClass}
+                    style={{ width: "25%" }}
+                  >
                     <a
                       href={cell}
                       target="_blank"
@@ -59,11 +67,19 @@ function DataTable({ currentRows, darkMode }) {
                 );
               } else {
                 return cellIndex === 1 ? (
-                  <td key={cellIndex} className={tableCellClass}>
+                  <td
+                    key={cellIndex}
+                    className={tableCellClass}
+                    style={{ width: "40%" }}
+                  >
                     {cell}
                   </td>
                 ) : (
-                  <td key={cellIndex} className={tableCellClass}>
+                  <td
+                    key={cellIndex}
+                    className={tableCellClass}
+                    style={{ width: "10%" }}
+                  >
                     {cell}
                   </td>
                 );

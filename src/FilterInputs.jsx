@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+/////////////////////////// working last one
+
+import React, { useEffect, useState } from "react";
 import "./FilterInputs.css";
 
 function FilterInputs({
@@ -12,16 +14,35 @@ function FilterInputs({
   const [companyOccupation, setCompanyOccupation] = useState("");
   const [city, setCity] = useState("");
   const [companyName, setCompanyName] = useState("");
+  const [noJobsOnLinkedIn, setNoJobsOnLinkedIn] = useState(false); // New state variable
 
-  const handleApplyFilters = () => {
-    applyFilters({ companyLocation, companyOccupation, city, companyName });
-  };
+  // Effect to apply filters immediately when any filter option changes
+  useEffect(() => {
+    applyFilters({
+      companyLocation,
+      companyOccupation,
+      city,
+      companyName,
+      noJobsOnLinkedIn,
+    });
+  }, [companyLocation, companyOccupation, city, noJobsOnLinkedIn, companyName]);
+
+  // const handleApplyFilters = () => {
+  //   applyFilters({
+  //     companyLocation,
+  //     companyOccupation,
+  //     city,
+  //     companyName,
+  //     noJobsOnLinkedIn,
+  //   });
+  // };
 
   const resetFilters = () => {
     setCompanyLocation("");
     setCompanyOccupation("");
     setCity("");
     setCompanyName("");
+    setNoJobsOnLinkedIn(false);
     resetTableData();
   };
 
@@ -90,15 +111,28 @@ function FilterInputs({
             className="filter-input"
           />
         </div>
+        <div className="filter-option">
+          <label className="filter-label">
+            No Jobs on LinkedIn:
+            <input
+              type="checkbox"
+              checked={noJobsOnLinkedIn}
+              onChange={(e) => setNoJobsOnLinkedIn(e.target.checked)}
+              className="filter-checkbox"
+            />
+          </label>
+        </div>
         <div className="filter-buttons">
-          <button
-            onClick={handleApplyFilters}
-            className="filter-button apply-button"
-          >
-            Filter
-          </button>
+          {
+            // <button
+            //   onClick={handleApplyFilters}
+            //   className="filter-button apply-button"
+            // >
+            //   Filter
+            // </button>
+          }
           <button onClick={resetFilters} className="filter-button reset-button">
-            Reset
+            Reset filters
           </button>
         </div>
       </div>

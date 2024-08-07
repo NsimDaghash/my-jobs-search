@@ -5,7 +5,7 @@ html, body {
   }
   
   .app-container {
-    color: black;
+    color: black ;
     background-color: white;
     min-height: 100vh;
     display: flex;
@@ -14,7 +14,7 @@ html, body {
   
   .app-container.dark-mode {
     color: white;
-    background-color: black; 
+    background-color: rgb(44, 43, 43); 
   }
   
   .header-container {

@@ -37,7 +37,7 @@ function About({ darkMode }) {
               <a
                 href="https://www.linkedin.com/in/nasim-daghash/"
                 target="_blank"
-                style={{ color: darkMode ? "yellow" : "inherit" }}
+                style={{ color: darkMode ? "yellow" : "blue" }}
               >
                 LinkedIn
               </a>
